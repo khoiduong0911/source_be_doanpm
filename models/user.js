@@ -14,7 +14,9 @@ const userSchema = new mongoose.Schema({
         }
     ],
     phone: { type: String },
+    status: { type: String, required: true, default: "hoạt động" }, 
     address: { type: String }
+    
 }, { timestamps: true })
 
 
@@ -30,6 +32,6 @@ const userSchema = new mongoose.Schema({
 // })
 
 
-const User = mongoose.model('user', userSchema);
+const User = mongoose.model('user', userSchema); 
 
 module.exports = User;

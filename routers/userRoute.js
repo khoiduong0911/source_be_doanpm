@@ -8,6 +8,7 @@ const {
     addOneProductToCart,
     deleteProductToCart,
     deleteOneUser,
+    updateUserStatus,
     searchUserByEmail,
     changeRoleByAdmin,
     updateAllCart,
@@ -18,6 +19,8 @@ const { verifyToken } = require('../middleware/verifyToken');
 Router.route('/').post(verifyToken, editProfile)
 
 Router.route("/search").post(searchUserByEmail);
+
+Router.route('/update-status').post(verifyToken, updateUserStatus);
 
 Router.route('/role').post(verifyToken, changeRoleByAdmin);
 
