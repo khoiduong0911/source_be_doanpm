@@ -61,9 +61,6 @@ exports.login = async (req, res, next) => {
             return;
         }
 
-        
-        // Kiểm tra trạng thái người dùng
-        console.log('Trạng thái người dùng:', user.status);
         if (user.status === 'không hoạt động' || user.status === 'bị khóa') {
             res.json({
                 status: 'failed',
